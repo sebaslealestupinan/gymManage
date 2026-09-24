@@ -1,4 +1,4 @@
-# Kinetix - Gimnasio Leal
+# Kinetix
 
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=java)
 ![JavaFX](https://img.shields.io/badge/JavaFX-22-blue?style=for-the-badge)
