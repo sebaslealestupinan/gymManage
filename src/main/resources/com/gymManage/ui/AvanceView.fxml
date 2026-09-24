@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" spacing="15.0" style="-fx-background-color: #121212; -fx-padding: 20;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gymManage.controller.AvanceController">
+    <children>
+        <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="Asistencia Mensual" />
+        <BarChart fx:id="barChartAsistencia" prefHeight="350.0" style="-fx-background-color: transparent;">
+            <xAxis>
+                <CategoryAxis label="Semana" side="BOTTOM" tickLabelFill="WHITE" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Días Asistidos" side="LEFT" tickLabelFill="WHITE" />
+            </yAxis>
+        </BarChart>
+    </children>
+</VBox>

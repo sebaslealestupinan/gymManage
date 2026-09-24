@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefWidth="320.0" spacing="12.0"
+      style="-fx-background-color: #ffffff; -fx-padding: 30px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 0);"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.gymManage.controller.LoginController">
+
+    <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1f2937;" text="GymManage" />
+    <Label style="-fx-font-size: 12px; -fx-text-fill: #6b7280; -fx-padding: 0 0 10 0;" text="Gym Management" />
+
+    <ComboBox fx:id="cmbRol" prefHeight="35.0" prefWidth="260.0" promptText="Seleccionar Rol"
+              style="-fx-background-color: #f9fafb; -fx-border-color: #d1d5db; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Cliente" />
+                <String fx:value="Entrenador" />
+                <String fx:value="Usuario Administrativo" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <TextField fx:id="txtUsuario" prefHeight="35.0" prefWidth="260.0" promptText="Usuario"
+               style="-fx-background-color: #f9fafb; -fx-border-color: #d1d5db; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-padding: 5px 10px;" />
+
+    <PasswordField fx:id="txtPassword" prefHeight="35.0" prefWidth="260.0" promptText="Contraseña"
+                   style="-fx-background-color: #f9fafb; -fx-border-color: #d1d5db; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-padding: 5px 10px;" />
+
+    <Button onAction="#login" prefHeight="38.0" prefWidth="260.0"
+            style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px; -fx-background-radius: 5px; -fx-cursor: hand;"
+            text="Ingresar">
+        <VBox.margin>
+            <Insets top="5.0" />
+        </VBox.margin>
+    </Button>
+
+    <Hyperlink onAction="#irACrearCuenta" style="-fx-text-fill: #2563eb; -fx-font-size: 11px;" text="¿No tienes cuenta? Regístrate aquí" />
+    <Hyperlink onAction="#olvidePassword" style="-fx-text-fill: #2563eb; -fx-font-size: 11px;" text="¿Olvidaste tu contraseña?" />
+
+    <Label fx:id="lblMensaje" style="-fx-text-fill: #dc2626; -fx-font-size: 12px;" />
+
+</VBox>

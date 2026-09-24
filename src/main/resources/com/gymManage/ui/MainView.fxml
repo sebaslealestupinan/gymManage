@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane prefHeight="650.0" prefWidth="400.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gymManage.controller.MainController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12.0" style="-fx-background-color: #1e1e1e; -fx-padding: 15;">
+            <children>
+                <Circle fill="#22c55e" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+                <VBox alignment="CENTER_LEFT">
+                    <children>
+                        <Label fx:id="lblNombreUsuario" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;" text="Sebastián Leal" />
+                        <Label fx:id="lblEstadoMembresia" style="-fx-text-fill: #22c55e; -fx-font-size: 12px;" text="Miembro Activo" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <StackPane fx:id="centerStack" style="-fx-background-color: #121212;" BorderPane.alignment="CENTER" />
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="60.0" spacing="10.0" style="-fx-background-color: #1e1e1e; -fx-padding: 10;">
+            <children>
+                <ToggleButton fx:id="btnTuDia" mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="🏋️ Tu Día" />
+                <ToggleButton fx:id="btnAvance" mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="📊 Avance" />
+                <ToggleButton fx:id="btnAgenda" mnemonicParsing="false" prefWidth="110.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="📅 Agenda" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
