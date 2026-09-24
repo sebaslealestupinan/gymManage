@@ -12,9 +12,22 @@ import java.util.concurrent.CompletableFuture;
 
 public class DBConnection {
 
-    // Configuración REST API de tu proyecto Supabase
-    private static final String URL = "https://nakpjtwgyxnfmkxwjczg.supabase.co/rest/v1/";
-    private static final String KEY = "sb_publishable_0FKdYtNm4v7oyKbpSvBt7w_ekxcayBU";
+    // Configuración REST API del proyecto la url y la key se obtienen de una variable de entorno,
+    // si no la tienes pide la
+    private static final String URL =
+            System.getenv("SUPABASE_URL")+ "/rest/v1/";
+
+    private static final String KEY =
+            System.getenv("SUPABASE_KEY");
+
+    static{
+        if(URL == null || KEY == null){
+            throw new IllegalStateException(
+                      "Faltan las variables SUPABASE_URL o SUPABASE_KEY"
+            );
+
+        }
+    }
 
     private static final HttpClient HTTP = HttpClient.newHttpClient();
 
@@ -35,7 +48,6 @@ public class DBConnection {
         HttpRequest.Builder builder = HttpRequest.newBuilder()
                 .uri(URI.create(URL + path))
                 .header("apikey", KEY)
-                .header("Authorization", "Bearer " + KEY)
                 .header("Content-Type", "application/json")
                 .header("Prefer", "return=representation");
 
